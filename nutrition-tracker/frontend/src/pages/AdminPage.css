@@ -2,12 +2,44 @@
   max-width: 1050px;
 }
 
+/* Admin Sub-Navigation Tabs */
+.admin-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.admin-tab-btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.admin-tab-btn:hover {
+  background: var(--surface-2);
+  color: #ffffff;
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.admin-tab-btn.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.2);
+}
+
 /* Stats Overview Cards */
 .admin-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .admin-stat-card {
@@ -42,21 +74,78 @@
   color: var(--text-3);
 }
 
+/* Two Column Dashboard Layout */
+.admin-dashboard-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.admin-card-panel {
+  padding: 24px;
+}
+
+.panel-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+/* System Info List */
+.system-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.info-label { font-size: 13px; color: var(--text-2); }
+.info-value { font-size: 13px; font-weight: 600; color: var(--text); }
+
+/* Quick Actions List */
+.quick-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.action-row-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+  font-size: 13px;
+}
+
 /* User Directory Section */
 .admin-users-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
   margin-bottom: 16px;
+}
+
+.user-search-input {
+  max-width: 400px;
 }
 
 .add-user-btn {
   padding: 8px 18px;
   font-size: 13px;
+  white-space: nowrap;
 }
 
 /* Add User Form Card */
-.add-user-card {
+.add-user-card, .add-recipe-card {
   padding: 24px;
   margin-bottom: 24px;
   border-color: rgba(168, 85, 247, 0.4);
@@ -71,7 +160,7 @@
 
 .add-user-form {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr 120px auto;
   gap: 12px;
   align-items: flex-end;
 }
@@ -145,14 +234,119 @@
   border: 1px solid var(--border);
 }
 
+.actions-cell {
+  display: flex;
+  gap: 6px;
+}
+
 .btn-sm {
   padding: 4px 10px;
   font-size: 11px;
   border-radius: 4px;
 }
 
+/* Recipe Catalog Form & Cards */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.recipe-textarea {
+  resize: vertical;
+  line-height: 1.4;
+}
+
+.admin-recipes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.admin-recipe-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-recipe-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.admin-recipe-actions {
+  margin-top: 6px;
+}
+
+/* Audit Logs List */
+.audit-logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.audit-log-item {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.log-level {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.level-info { background: rgba(168, 85, 247, 0.15); color: var(--accent); }
+.level-success { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.level-warning { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+
+.log-time { font-size: 11px; color: var(--text-3); }
+.log-action { font-size: 13px; font-weight: 600; color: var(--text); }
+.log-detail { font-size: 12px; color: var(--text-2); }
+
+/* Maintenance Controls */
+.maintenance-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.maintenance-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+}
+
 @media (max-width: 840px) {
   .admin-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .admin-dashboard-two-col { grid-template-columns: 1fr; }
   .add-user-form { grid-template-columns: 1fr; }
+  .form-grid-2, .form-grid-4 { grid-template-columns: 1fr 1fr; }
+  .admin-recipes-grid { grid-template-columns: 1fr; }
   .users-table-card { overflow-x: auto; }
 }
