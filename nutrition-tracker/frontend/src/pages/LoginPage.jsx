@@ -4,29 +4,46 @@ import { useAuth } from '../context/AuthContext';
 import './AuthPages.css';
 
 export default function LoginPage() {
-  const [form, setForm] = useState({ email: '', password: '' });
+  const [form, setForm] = useState({ email: 'demo@nutripath.com', password: 'password123' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    if (e) e.preventDefault();
     setError('');
     setLoading(true);
     try {
       await login(form.email, form.password);
       navigate('/dashboard');
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed. Try filling demo credentials.');
+      if (!err.response) {
+        setError('Cannot reach backend server. Please ensure backend is running on port 5000.');
+      } else {
+        setError(err.response?.data?.message || 'Login failed.');
+      }
     } finally {
       setLoading(false);
     }
   };
 
-  const handleFillDemo = (email, password) => {
+  const handleFillAndLogin = async (email, password) => {
     setForm({ email, password });
     setError('');
+    setLoading(true);
+    try {
+      await login(email, password);
+      navigate('/dashboard');
+    } catch (err) {
+      if (!err.response) {
+        setError('Cannot reach backend server. Please ensure backend is running on port 5000.');
+      } else {
+        setError(err.response?.data?.message || 'Login failed.');
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -41,16 +58,16 @@ export default function LoginPage() {
 
         {/* Demo Seed Shortcut Banner */}
         <div className="demo-credentials-banner">
-          <div className="demo-banner-title">🔑 Quick Demo Login Credentials:</div>
+          <div className="demo-banner-title">🔑 Pre-Seeded Demo Credentials:</div>
           <div className="demo-banner-credentials">
             <code>demo@nutripath.com</code> / <code>password123</code>
           </div>
           <button
             type="button"
             className="btn btn-ghost demo-fill-btn"
-            onClick={() => handleFillDemo('demo@nutripath.com', 'password123')}
+            onClick={() => handleFillAndLogin('demo@nutripath.com', 'password123')}
           >
-            ⚡ Auto-Fill Demo Credentials
+            ⚡ One-Click Instant Demo Login
           </button>
         </div>
 
