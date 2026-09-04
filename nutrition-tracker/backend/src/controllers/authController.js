@@ -7,6 +7,8 @@ const prisma = new PrismaClient();
 const generateToken = (userId) =>
   jwt.sign({ userId }, process.env.JWT_SECRET || 'nutritrack-super-secret-jwt-2024', { expiresIn: '7d' });
 
+const getRole = (email) => (email === 'elizabethmacharia366@gmail.com' ? 'admin' : 'user');
+
 exports.register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -26,7 +28,7 @@ exports.register = async (req, res) => {
     await prisma.goal.create({ data: { userId: user.id } });
 
     const token = generateToken(user.id);
-    res.status(201).json({ token, user: { id: user.id, name: user.name, email: user.email } });
+    res.status(201).json({ token, user: { id: user.id, name: user.name, email: user.email, role: getRole(user.email) } });
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message });
   }
@@ -70,7 +72,7 @@ exports.login = async (req, res) => {
     if (!isMatch) return res.status(400).json({ message: 'Invalid email or password' });
 
     const token = generateToken(user.id);
-    res.json({ token, user: { id: user.id, name: user.name, email: user.email } });
+    res.json({ token, user: { id: user.id, name: user.name, email: user.email, role: getRole(user.email) } });
   } catch (err) {
     console.error('Login Error:', err);
     res.status(500).json({ message: 'Server error: ' + err.message });
@@ -83,7 +85,8 @@ exports.me = async (req, res) => {
       where: { id: req.userId },
       select: { id: true, name: true, email: true, createdAt: true },
     });
-    res.json(user);
+    if (!user) return res.status(404).json({ message: 'User not found' });
+    res.json({ ...user, role: getRole(user.email) });
   } catch (err) {
     res.status(500).json({ message: 'Server error' });
   }

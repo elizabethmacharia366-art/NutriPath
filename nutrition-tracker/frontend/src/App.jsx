@@ -9,6 +9,7 @@ import MealPlanPage from './pages/MealPlanPage';
 import WaterPage from './pages/WaterPage';
 import GoalsPage from './pages/GoalsPage';
 import ProgressPage from './pages/ProgressPage';
+import AdminPage from './pages/AdminPage';
 import Layout from './components/layout/Layout';
 
 const PrivateRoute = ({ children }) => {
@@ -44,6 +45,7 @@ export default function App() {
             <Route path="water" element={<WaterPage />} />
             <Route path="goals" element={<GoalsPage />} />
             <Route path="progress" element={<ProgressPage />} />
+            <Route path="admin" element={<AdminPage />} />
           </Route>
 
           {/* Catch-all Fallback */}

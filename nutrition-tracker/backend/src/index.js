@@ -111,6 +111,7 @@ app.use(cors({
 app.use(express.json());
 
 const mealPlanRoutes = require('./routes/mealPlan');
+const adminRoutes = require('./routes/admin');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/meals', mealRoutes);
@@ -118,6 +119,7 @@ app.use('/api/water', waterRoutes);
 app.use('/api/goals', goalRoutes);
 app.use('/api/food', foodRoutes);
 app.use('/api/meal-plan', mealPlanRoutes);
+app.use('/api/admin', adminRoutes);
 
 app.get('/api/health', (req, res) => res.json({ status: 'OK', seeded: true }));
 
