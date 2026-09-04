@@ -16,12 +16,17 @@ export default function LoginPage() {
     setLoading(true);
     try {
       await login(form.email, form.password);
-      navigate('/');
+      navigate('/dashboard');
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed');
+      setError(err.response?.data?.message || 'Login failed. Try filling demo credentials.');
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleFillDemo = (email, password) => {
+    setForm({ email, password });
+    setError('');
   };
 
   return (
@@ -29,17 +34,32 @@ export default function LoginPage() {
       <div className="auth-card card">
         <div className="auth-logo">
           <span>🌿</span>
-          <h1>NutriTrack</h1>
+          <h1>NutriPath</h1>
         </div>
         <h2 className="auth-title">Welcome back</h2>
-        <p className="auth-sub">Sign in to your account</p>
+        <p className="auth-sub">Sign in to access your dashboard</p>
+
+        {/* Demo Seed Shortcut Banner */}
+        <div className="demo-credentials-banner">
+          <div className="demo-banner-title">🔑 Quick Demo Login Credentials:</div>
+          <div className="demo-banner-credentials">
+            <code>demo@nutripath.com</code> / <code>password123</code>
+          </div>
+          <button
+            type="button"
+            className="btn btn-ghost demo-fill-btn"
+            onClick={() => handleFillDemo('demo@nutripath.com', 'password123')}
+          >
+            ⚡ Auto-Fill Demo Credentials
+          </button>
+        </div>
 
         {error && <div className="auth-error">{error}</div>}
 
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
-            <label>Email</label>
-            <input className="input" type="email" placeholder="you@example.com"
+            <label>Email Address</label>
+            <input className="input" type="email" placeholder="demo@nutripath.com"
               value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required />
           </div>
           <div className="form-group">
@@ -52,7 +72,9 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="auth-link">Don't have an account? <Link to="/register">Create one</Link></p>
+        <p className="auth-link">
+          Don't have an account? <Link to="/register">Create one</Link> | <Link to="/">Back to Home</Link>
+        </p>
       </div>
     </div>
   );
