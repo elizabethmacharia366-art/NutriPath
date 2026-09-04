@@ -60,7 +60,7 @@ export default function GoalsPage() {
               <span>Protein {(form.protein * 4 / form.calories * 100).toFixed(0)}%</span>
             </div>
             <div className="macro-pct">
-              <div className="pct-bar" style={{ background: '#f59e0b', width: `${(form.carbs * 4 / form.calories * 100).toFixed(0)}%` }} />
+              <div className="pct-bar" style={{ background: '#ec4899', width: `${(form.carbs * 4 / form.calories * 100).toFixed(0)}%` }} />
               <span>Carbs {(form.carbs * 4 / form.calories * 100).toFixed(0)}%</span>
             </div>
             <div className="macro-pct">

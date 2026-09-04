@@ -29,7 +29,7 @@
   border-radius: 50%;
   background: var(--accent);
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
   transition: transform 0.15s;
 }
 .goal-slider::-webkit-slider-thumb:hover {

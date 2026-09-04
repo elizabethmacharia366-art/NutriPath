@@ -95,7 +95,7 @@ export default function DashboardPage() {
           <h3 className="card-title">Macronutrients</h3>
           <div className="macros-list">
             <MacroBar label="Protein" current={totals.protein} goal={goals.protein} color="#a855f7" />
-            <MacroBar label="Carbs" current={totals.carbs} goal={goals.carbs} color="#f59e0b" />
+            <MacroBar label="Carbs" current={totals.carbs} goal={goals.carbs} color="#ec4899" />
             <MacroBar label="Fats" current={totals.fats} goal={goals.fats} color="#06b6d4" />
           </div>
         </div>

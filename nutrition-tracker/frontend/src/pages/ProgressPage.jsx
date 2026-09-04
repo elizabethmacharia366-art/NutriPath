@@ -29,12 +29,12 @@ export default function ProgressPage() {
   } : { calories: 0, protein: 0, carbs: 0, fats: 0 };
 
   const tooltipStyle = {
-    background: '#11151f',
-    border: '1px solid rgba(255, 255, 255, 0.12)',
+    background: '#120e1a',
+    border: '1px solid rgba(168, 85, 247, 0.3)',
     borderRadius: '8px',
     fontSize: '13px',
     color: '#f8fafc',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.5)',
+    boxShadow: '0 4px 20px rgba(0,0,0,0.6)',
   };
 
   return (
@@ -64,10 +64,10 @@ export default function ProgressPage() {
         <ResponsiveContainer width="100%" height={230}>
           <BarChart data={formatted} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.08)" />
-            <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#94a3b8' }} />
-            <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} />
+            <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#a78bfa' }} />
+            <YAxis tick={{ fontSize: 11, fill: '#a78bfa' }} />
             <Tooltip contentStyle={tooltipStyle} />
-            <Bar dataKey="calories" fill="#10b981" radius={[6, 6, 0, 0]} />
+            <Bar dataKey="calories" fill="#a855f7" radius={[6, 6, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
@@ -77,12 +77,12 @@ export default function ProgressPage() {
         <ResponsiveContainer width="100%" height={230}>
           <LineChart data={formatted} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.08)" />
-            <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#94a3b8' }} />
-            <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} />
+            <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#a78bfa' }} />
+            <YAxis tick={{ fontSize: 11, fill: '#a78bfa' }} />
             <Tooltip contentStyle={tooltipStyle} />
-            <Legend wrapperStyle={{ fontSize: 12, color: '#94a3b8' }} />
+            <Legend wrapperStyle={{ fontSize: 12, color: '#a78bfa' }} />
             <Line type="monotone" dataKey="protein" stroke="#a855f7" strokeWidth={2.5} dot={{ fill: '#a855f7', r: 4 }} />
-            <Line type="monotone" dataKey="carbs" stroke="#f59e0b" strokeWidth={2.5} dot={{ fill: '#f59e0b', r: 4 }} />
+            <Line type="monotone" dataKey="carbs" stroke="#ec4899" strokeWidth={2.5} dot={{ fill: '#ec4899', r: 4 }} />
             <Line type="monotone" dataKey="fats" stroke="#06b6d4" strokeWidth={2.5} dot={{ fill: '#06b6d4', r: 4 }} />
           </LineChart>
         </ResponsiveContainer>
