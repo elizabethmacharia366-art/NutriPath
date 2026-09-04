@@ -1,76 +1,44 @@
-# 🌿 NutriTrack — Diet & Nutrition Tracker
+# NutriPath — Diet & Nutrition Tracker
 
-A full-stack web app built with **React + Node.js + Prisma + MongoDB**.
-
----
-
-## Project Structure
-
-```
-nutrition-tracker/
-├── backend/           # Node.js + Express API
-│   ├── prisma/
-│   │   └── schema.prisma
-│   ├── src/
-│   │   ├── controllers/
-│   │   │   ├── authController.js
-│   │   │   ├── mealController.js
-│   │   │   ├── waterController.js
-│   │   │   └── goalController.js
-│   │   ├── middleware/
-│   │   │   └── auth.js
-│   │   ├── routes/
-│   │   │   ├── auth.js
-│   │   │   ├── meals.js
-│   │   │   ├── water.js
-│   │   │   ├── goals.js
-│   │   │   └── food.js
-│   │   └── index.js
-│   ├── .env.example
-│   └── package.json
-│
-└── frontend/          # React + Vite
-    ├── src/
-    │   ├── components/
-    │   │   └── layout/
-    │   │       ├── Layout.jsx
-    │   │       └── Layout.css
-    │   ├── context/
-    │   │   └── AuthContext.jsx
-    │   ├── pages/
-    │   │   ├── LoginPage.jsx
-    │   │   ├── RegisterPage.jsx
-    │   │   ├── DashboardPage.jsx
-    │   │   ├── MealsPage.jsx
-    │   │   ├── WaterPage.jsx
-    │   │   ├── GoalsPage.jsx
-    │   │   └── ProgressPage.jsx
-    │   ├── utils/
-    │   │   └── api.js
-    │   ├── App.jsx
-    │   ├── main.jsx
-    │   └── index.css
-    ├── index.html
-    ├── vite.config.js
-    └── package.json
-```
+A production-ready full-stack web application built with **React (Vite) + Node.js (Express) + Prisma + SQLite/MongoDB**.
 
 ---
 
-## Setup
+## Features
+
+- **Public Landing Page**: Accessible root page featuring hero presentation and pre-seeded demo accounts.
+- **Personalized Meal Plan Generator**: Customized meal plans (Breakfast, Lunch, Dinner, Snack) tailored to target calories and dietary preferences (High Protein, Balanced, Low Carb/Keto, Plant-Based/Vegan).
+- **Recipe Book & Preparation Guides**: Detailed recipe directory with ingredients, step-by-step cooking instructions, preparation times, and 1-click meal logging.
+- **Food Search**: Search thousands of items via Open Food Facts database integration.
+- **Hydration Tracker**: Interactive liquid volume gauge with quick-add buttons.
+- **Goals Management**: Set custom calorie, macronutrient (Protein, Carbs, Fats), and water targets.
+- **7-Day Progress Analytics**: Weekly bar and line charts showcasing calorie trends and macro splits.
+- **Pre-Seeded Demo Access**: Instant 1-click demo login for `demo@nutripath.com` and `elizabethmacharia366@gmail.com`.
+
+---
+
+## Pre-Seeded Demo Credentials
+
+| Role | Email | Password |
+|---|---|---|
+| Primary Demo User | `demo@nutripath.com` | `password123` |
+| Admin Account | `elizabethmacharia366@gmail.com` | `password123` |
+
+---
+
+## Setup & Running Locally
 
 ### 1. Backend
 
 ```bash
 cd backend
 cp .env.example .env
-# Fill in your MongoDB URI and JWT secret in .env
 
 npm install
 npx prisma generate
 npx prisma db push
 
-npm run dev   # Starts on http://localhost:5000
+npm run dev   # Starts API server on http://localhost:5000
 ```
 
 ### 2. Frontend
@@ -78,31 +46,18 @@ npm run dev   # Starts on http://localhost:5000
 ```bash
 cd frontend
 npm install
-npm run dev   # Starts on http://localhost:5173
+npm run dev   # Starts Vite server on http://localhost:5173
 ```
-
----
-
-## Features
-
-| Feature | Description |
-|---|---|
-| 🔐 Auth | JWT-based signup/login |
-| 🍽 Meal Logging | Log meals by type (breakfast, lunch, dinner, snack) |
-| 🔍 Food Search | Search Open Food Facts database |
-| 💧 Water Tracker | Log water with quick-add buttons |
-| 🎯 Goals | Set calorie, macro, and hydration goals |
-| 📈 Progress | 7-day charts for calories and macros |
 
 ---
 
 ## Tech Stack
 
-| Layer | Tech |
+| Layer | Technology |
 |---|---|
 | Frontend | React 18, Vite, React Router, Recharts |
 | Backend | Node.js, Express |
 | ORM | Prisma |
-| Database | MongoDB Atlas |
-| Auth | JWT + bcryptjs |
-| Food Data | Open Food Facts API |
+| Database | SQLite / MongoDB Atlas |
+| Authentication | JWT + bcryptjs |
+| Food API | Open Food Facts API |
