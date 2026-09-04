@@ -2,24 +2,21 @@ import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import './Layout.css';
 
+const navItems = [
+  { path: '/dashboard', label: 'Dashboard' },
+  { path: '/meals', label: 'Meals' },
+  { path: '/meal-plan', label: 'Meal Planner & Recipes' },
+  { path: '/water', label: 'Water' },
+  { path: '/progress', label: 'Progress' },
+  { path: '/goals', label: 'Goals' },
+  { path: '/admin', label: 'Admin Portal' },
+];
+
 export default function Layout() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   const isAdmin = user?.email === 'elizabethmacharia366@gmail.com' || user?.role === 'admin';
-
-  const navItems = [
-    { path: '/dashboard', label: 'Dashboard' },
-    { path: '/meals', label: 'Meals' },
-    { path: '/meal-plan', label: 'Meal Planner & Recipes' },
-    { path: '/water', label: 'Water' },
-    { path: '/progress', label: 'Progress' },
-    { path: '/goals', label: 'Goals' },
-  ];
-
-  if (isAdmin) {
-    navItems.push({ path: '/admin', label: 'Admin Portal' });
-  }
 
   const handleLogout = () => { logout(); navigate('/login'); };
 
