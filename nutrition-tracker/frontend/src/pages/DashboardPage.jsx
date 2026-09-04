@@ -52,7 +52,7 @@ export default function DashboardPage() {
   return (
     <div className="dashboard">
       <div className="page-header">
-        <h1 className="page-title">{greeting()}, {user?.name?.split(' ')[0] || 'User'} 👋</h1>
+        <h1 className="page-title">{greeting()}, {user?.name?.split(' ')[0] || 'User'}</h1>
         <p className="page-subtitle">{new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
       </div>
 
@@ -120,7 +120,6 @@ export default function DashboardPage() {
           <h3 className="card-title">Recent Meals</h3>
           {meals.length === 0 ? (
             <div className="empty-state">
-              <span>🍽</span>
               <p>No meals logged today</p>
             </div>
           ) : (

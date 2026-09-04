@@ -50,7 +50,6 @@ export default function LoginPage() {
     <div className="auth-page">
       <div className="auth-card card">
         <div className="auth-logo">
-          <span>🌿</span>
           <h1>NutriPath</h1>
         </div>
         <h2 className="auth-title">Welcome back</h2>
@@ -58,7 +57,7 @@ export default function LoginPage() {
 
         {/* Demo Seed Shortcut Banner */}
         <div className="demo-credentials-banner">
-          <div className="demo-banner-title">🔑 Pre-Seeded Demo Credentials:</div>
+          <div className="demo-banner-title">Pre-Seeded Demo Credentials:</div>
           <div className="demo-banner-credentials">
             <code>demo@nutripath.com</code> / <code>password123</code>
           </div>
@@ -67,7 +66,7 @@ export default function LoginPage() {
             className="btn btn-ghost demo-fill-btn"
             onClick={() => handleFillAndLogin('demo@nutripath.com', 'password123')}
           >
-            ⚡ One-Click Instant Demo Login
+            One-Click Instant Demo Login
           </button>
         </div>
 

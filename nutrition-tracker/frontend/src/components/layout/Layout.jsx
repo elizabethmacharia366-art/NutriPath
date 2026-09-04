@@ -3,12 +3,12 @@ import { useAuth } from '../../context/AuthContext';
 import './Layout.css';
 
 const navItems = [
-  { path: '/dashboard', label: 'Dashboard', icon: '⊞' },
-  { path: '/meals', label: 'Meals', icon: '🍽' },
-  { path: '/meal-plan', label: 'Meal Planner & Recipes', icon: '🍱' },
-  { path: '/water', label: 'Water', icon: '💧' },
-  { path: '/progress', label: 'Progress', icon: '📈' },
-  { path: '/goals', label: 'Goals', icon: '🎯' },
+  { path: '/dashboard', label: 'Dashboard' },
+  { path: '/meals', label: 'Meals' },
+  { path: '/meal-plan', label: 'Meal Planner & Recipes' },
+  { path: '/water', label: 'Water' },
+  { path: '/progress', label: 'Progress' },
+  { path: '/goals', label: 'Goals' },
 ];
 
 export default function Layout() {
@@ -22,7 +22,6 @@ export default function Layout() {
       <aside className="sidebar">
         <div className="sidebar-header">
           <div className="logo">
-            <span className="logo-icon">🌿</span>
             <span className="logo-text">NutriPath</span>
           </div>
         </div>
@@ -34,7 +33,6 @@ export default function Layout() {
               to={item.path}
               className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
             >
-              <span className="nav-icon">{item.icon}</span>
               <span>{item.label}</span>
             </NavLink>
           ))}

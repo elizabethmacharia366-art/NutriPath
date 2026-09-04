@@ -77,14 +77,12 @@ export default function WaterPage() {
           <h3 className="section-title">Today's Log</h3>
           {water.logs.length === 0 ? (
             <div className="empty-state">
-              <span>💧</span>
               <p>No water logged yet</p>
             </div>
           ) : (
             <div className="water-logs">
               {water.logs.map(log => (
                 <div key={log.id} className="water-log-item">
-                  <div className="log-icon">💧</div>
                   <div className="log-info">
                     <span className="log-amount">{log.amount}L</span>
                     <span className="log-time">{new Date(log.loggedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
