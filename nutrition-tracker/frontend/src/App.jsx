@@ -22,6 +22,13 @@ const PrivateRoute = ({ children }) => {
   return user ? children : <Navigate to="/login" replace />;
 };
 
+const AdminRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+  if (loading) return null;
+  const isAdmin = user?.email === 'elizabethmacharia366@gmail.com' || user?.role === 'admin';
+  return isAdmin ? children : <Navigate to="/dashboard" replace />;
+};
+
 export default function App() {
   return (
     <AuthProvider>
@@ -45,7 +52,7 @@ export default function App() {
             <Route path="water" element={<WaterPage />} />
             <Route path="goals" element={<GoalsPage />} />
             <Route path="progress" element={<ProgressPage />} />
-            <Route path="admin" element={<AdminPage />} />
+            <Route path="admin" element={<AdminRoute><AdminPage /></AdminRoute>} />
           </Route>
 
           {/* Catch-all Fallback */}
