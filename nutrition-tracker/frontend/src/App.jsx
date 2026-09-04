@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import MealsPage from './pages/MealsPage';
+import MealPlanPage from './pages/MealPlanPage';
 import WaterPage from './pages/WaterPage';
 import GoalsPage from './pages/GoalsPage';
 import ProgressPage from './pages/ProgressPage';
@@ -39,6 +40,7 @@ export default function App() {
 
           <Route path="/" element={<PrivateRoute><Layout /></PrivateRoute>}>
             <Route path="meals" element={<MealsPage />} />
+            <Route path="meal-plan" element={<MealPlanPage />} />
             <Route path="water" element={<WaterPage />} />
             <Route path="goals" element={<GoalsPage />} />
             <Route path="progress" element={<ProgressPage />} />
