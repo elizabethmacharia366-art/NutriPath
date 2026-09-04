@@ -1,0 +1,23 @@
+.progress-page { max-width: 900px; }
+
+.avg-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.avg-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.avg-label { font-size: 11px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.4px; }
+.avg-val { font-size: 22px; font-weight: 700; color: var(--text); }
+.avg-unit { font-size: 13px; font-weight: 400; color: var(--text-2); margin-left: 2px; }
+.avg-goal { font-size: 11px; color: var(--text-3); }
+
+.chart-card { padding: 20px; margin-bottom: 16px; }
+.chart-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 16px; }

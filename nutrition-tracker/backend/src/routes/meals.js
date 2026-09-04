@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const { logMeal, getMeals, deleteMeal, getWeeklyStats } = require('../controllers/mealController');
+const auth = require('../middleware/auth');
+router.use(auth);
+router.post('/', logMeal);
+router.get('/', getMeals);
+router.delete('/:id', deleteMeal);
+router.get('/stats/weekly', getWeeklyStats);
+module.exports = router;

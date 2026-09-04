@@ -1,0 +1,154 @@
+.dashboard { max-width: 960px; }
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.cal-card { padding: 24px; }
+
+.cal-ring-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 16px;
+}
+
+.cal-ring { width: 100%; height: 100%; }
+
+.cal-ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-number { font-size: 26px; font-weight: 700; color: var(--text); line-height: 1; }
+.cal-label { font-size: 12px; color: var(--text-2); margin-top: 2px; }
+
+.cal-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.cal-stat { text-align: center; flex: 1; }
+.cal-stat-divider { width: 1px; height: 28px; background: var(--border); }
+.stat-val { display: block; font-size: 16px; font-weight: 700; color: var(--text); }
+.stat-lbl { display: block; font-size: 11px; color: var(--text-3); margin-top: 1px; }
+
+.macros-card { padding: 24px; }
+.macros-list { display: flex; flex-direction: column; gap: 16px; }
+
+.macro-bar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.macro-label { font-size: 13px; font-weight: 500; color: var(--text); }
+.macro-values { font-size: 13px; color: var(--text-2); }
+.macro-values span { color: var(--text-3); }
+
+.macro-track {
+  height: 6px;
+  background: var(--surface-2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.macro-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.water-card { padding: 24px; display: flex; flex-direction: column; align-items: center; }
+.water-card .card-title { align-self: flex-start; }
+
+.water-visual {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 12px;
+}
+
+.water-glass {
+  width: 60px;
+  height: 90px;
+  border: 2px solid var(--border-strong);
+  border-radius: 4px 4px 8px 8px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.water-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, #2f6890, #5fa0c4);
+  transition: height 0.5s ease;
+}
+
+.water-pct {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.water-info { text-align: center; }
+.water-current { display: block; font-size: 20px; font-weight: 700; color: var(--text); }
+.water-goal { font-size: 13px; color: var(--text-2); }
+
+.recent-card { padding: 24px; }
+
+.recent-meals { display: flex; flex-direction: column; gap: 10px; }
+
+.recent-meal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+}
+
+.recent-meal-info { display: flex; align-items: center; gap: 8px; }
+.recent-meal-name { font-size: 14px; font-weight: 500; color: var(--text); }
+.recent-meal-type {
+  font-size: 10px;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 2px 6px;
+  text-transform: capitalize;
+}
+.recent-meal-cal { font-size: 13px; font-weight: 600; color: var(--text-2); }
+
+.empty-state {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-3);
+}
+.empty-state span { font-size: 28px; display: block; margin-bottom: 8px; }
+.empty-state p { font-size: 14px; }

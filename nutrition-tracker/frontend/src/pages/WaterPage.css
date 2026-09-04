@@ -1,0 +1,92 @@
+.water-page { max-width: 800px; }
+
+.water-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+
+.water-main-card { padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+
+.big-glass-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+.big-glass {
+  width: 100px;
+  height: 160px;
+  border: 2.5px solid var(--border-strong);
+  border-radius: 6px 6px 14px 14px;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.big-fill {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, #1a5c8a, #4fa0d0);
+  transition: height 0.6s ease;
+  min-height: 0;
+}
+
+.water-ripple {
+  position: absolute;
+  top: -4px; left: 0; right: 0;
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+}
+
+.glass-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.glass-amount { font-size: 18px; font-weight: 700; color: var(--text); }
+.glass-goal { font-size: 11px; color: var(--text-2); }
+.pct-label { font-size: 13px; color: var(--text-2); font-weight: 500; }
+
+.quick-label { font-size: 12px; font-weight: 600; color: var(--text-2); text-align: center; margin-bottom: 8px; }
+.quick-btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+
+.quick-btn {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--info-light);
+  color: var(--info);
+  border: 1px solid #c0d9e8;
+  font-size: 13px;
+  font-weight: 600;
+}
+.quick-btn:hover { background: #d4e8f2; }
+
+.custom-add { display: flex; gap: 8px; width: 100%; }
+
+.water-log-card { padding: 20px; }
+.section-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+
+.water-logs { display: flex; flex-direction: column; gap: 8px; }
+
+.water-log-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+}
+
+.log-icon { font-size: 16px; }
+.log-info { flex: 1; }
+.log-amount { display: block; font-size: 14px; font-weight: 600; color: var(--text); }
+.log-time { font-size: 11px; color: var(--text-3); }
+
+.del-btn {
+  background: none; border: none;
+  color: var(--text-3); font-size: 12px;
+}
+.del-btn:hover { color: var(--danger); }
+
+.empty-state { text-align: center; padding: 32px; color: var(--text-3); }
+.empty-state span { font-size: 28px; display: block; margin-bottom: 8px; }
+.empty-state p { font-size: 14px; }

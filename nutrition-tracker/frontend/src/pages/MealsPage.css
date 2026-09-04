@@ -1,0 +1,114 @@
+.meals-page { max-width: 960px; }
+
+.meals-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.log-card { padding: 20px; }
+.section-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+
+.search-form { display: flex; gap: 8px; margin-bottom: 12px; }
+
+.search-results {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 12px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--surface-2); }
+
+.result-info { display: flex; flex-direction: column; }
+.result-name { font-size: 13px; font-weight: 500; color: var(--text); }
+.result-brand { font-size: 11px; color: var(--text-3); }
+.result-cal { font-size: 12px; font-weight: 600; color: var(--text-2); white-space: nowrap; }
+
+.selected-food {
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  background: var(--accent-light);
+}
+
+.selected-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.selected-name { font-size: 14px; font-weight: 600; color: var(--text); }
+.selected-macros { display: flex; gap: 10px; margin-top: 4px; }
+.selected-macros span { font-size: 12px; color: var(--text-2); }
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 14px;
+  padding: 0;
+  line-height: 1;
+}
+.clear-btn:hover { color: var(--danger); }
+
+.log-form { display: flex; flex-direction: column; gap: 10px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 12px; font-weight: 500; color: var(--text-2); }
+
+.cal-preview {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  padding: 4px 0;
+}
+.cal-preview::after { content: ' kcal'; font-size: 13px; font-weight: 400; color: var(--text-2); }
+
+.log-btn { width: 100%; justify-content: center; }
+
+.today-panel { display: flex; flex-direction: column; gap: 12px; }
+
+.meal-group { padding: 16px; }
+.meal-group-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.meal-group-title { font-size: 12px; font-weight: 700; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; }
+.meal-group-cal { font-size: 13px; font-weight: 600; color: var(--text-2); }
+
+.meal-empty { font-size: 13px; color: var(--text-3); padding: 4px 0; }
+
+.meal-items { display: flex; flex-direction: column; gap: 6px; }
+
+.meal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+}
+
+.meal-item-info { display: flex; flex-direction: column; }
+.meal-item-name { font-size: 13px; font-weight: 500; color: var(--text); }
+.meal-item-detail { font-size: 11px; color: var(--text-3); margin-top: 1px; }
+
+.meal-item-right { display: flex; align-items: center; gap: 10px; }
+.meal-item-cal { font-size: 13px; font-weight: 600; color: var(--text-2); }
+
+.del-btn {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 12px;
+  padding: 2px;
+  line-height: 1;
+}
+.del-btn:hover { color: var(--danger); }
