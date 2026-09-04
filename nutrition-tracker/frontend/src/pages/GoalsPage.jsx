@@ -56,15 +56,15 @@ export default function GoalsPage() {
 
           <div className="macro-preview">
             <div className="macro-pct">
-              <div className="pct-bar" style={{ background: 'var(--accent)', width: `${(form.protein * 4 / form.calories * 100).toFixed(0)}%` }} />
+              <div className="pct-bar" style={{ background: '#a855f7', width: `${(form.protein * 4 / form.calories * 100).toFixed(0)}%` }} />
               <span>Protein {(form.protein * 4 / form.calories * 100).toFixed(0)}%</span>
             </div>
             <div className="macro-pct">
-              <div className="pct-bar" style={{ background: 'var(--warning)', width: `${(form.carbs * 4 / form.calories * 100).toFixed(0)}%` }} />
+              <div className="pct-bar" style={{ background: '#f59e0b', width: `${(form.carbs * 4 / form.calories * 100).toFixed(0)}%` }} />
               <span>Carbs {(form.carbs * 4 / form.calories * 100).toFixed(0)}%</span>
             </div>
             <div className="macro-pct">
-              <div className="pct-bar" style={{ background: 'var(--info)', width: `${(form.fats * 9 / form.calories * 100).toFixed(0)}%` }} />
+              <div className="pct-bar" style={{ background: '#06b6d4', width: `${(form.fats * 9 / form.calories * 100).toFixed(0)}%` }} />
               <span>Fats {(form.fats * 9 / form.calories * 100).toFixed(0)}%</span>
             </div>
           </div>

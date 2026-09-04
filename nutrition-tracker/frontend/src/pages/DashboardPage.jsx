@@ -52,12 +52,12 @@ export default function DashboardPage() {
   return (
     <div className="dashboard">
       <div className="page-header">
-        <h1 className="page-title">{greeting()}, {user?.name?.split(' ')[0]} 👋</h1>
+        <h1 className="page-title">{greeting()}, {user?.name?.split(' ')[0] || 'User'} 👋</h1>
         <p className="page-subtitle">{new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
       </div>
 
       <div className="dash-grid">
-        {}
+        {/* Calories Ring Card */}
         <div className="card cal-card">
           <h3 className="card-title">Today's Calories</h3>
           <div className="cal-ring-wrap">
@@ -90,17 +90,17 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Macros */}
+        {/* Macros Card */}
         <div className="card macros-card">
           <h3 className="card-title">Macronutrients</h3>
           <div className="macros-list">
-            <MacroBar label="Protein" current={totals.protein} goal={goals.protein} color="#3d6b4f" />
-            <MacroBar label="Carbs" current={totals.carbs} goal={goals.carbs} color="#c47d20" />
-            <MacroBar label="Fats" current={totals.fats} goal={goals.fats} color="#2f6890" />
+            <MacroBar label="Protein" current={totals.protein} goal={goals.protein} color="#a855f7" />
+            <MacroBar label="Carbs" current={totals.carbs} goal={goals.carbs} color="#f59e0b" />
+            <MacroBar label="Fats" current={totals.fats} goal={goals.fats} color="#06b6d4" />
           </div>
         </div>
 
-        {/* Water */}
+        {/* Water Card */}
         <div className="card water-card">
           <h3 className="card-title">Water Intake</h3>
           <div className="water-visual">
@@ -115,7 +115,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Recent meals */}
+        {/* Recent Meals Card */}
         <div className="card recent-card">
           <h3 className="card-title">Recent Meals</h3>
           {meals.length === 0 ? (
